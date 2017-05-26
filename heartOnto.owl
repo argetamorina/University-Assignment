@@ -1,0 +1,1563 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#"
+     xml:base="http://www.owl-ontologies.com/ProjektiWebSemantic.owl"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+    <owl:Ontology rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasAge -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasAge">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#age"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasBeenDiagnosedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasBeenDiagnosedBy">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isSickOf"/>
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isDefinedBy"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasBloodPreassure -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasBloodPreassure">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#distolic"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#systolic"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasDiabetes -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasDiabetes">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#diabetic"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasECG -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasECG">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasGender -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasGender">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#gender"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasHeartRate -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasHeartRate"/>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasName -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasName">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#name"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasSymptoms -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasSymptoms">
+        <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isSymptomOf"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Symptoms"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isDefinedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isDefinedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isObese -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isObese">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isSickOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isSickOf">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isSmoker -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isSmoker">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#smoker"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isSymptomOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isSymptomOf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#address -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#address">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#age">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#diabetic -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#diabetic">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#distolic -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#distolic">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#ecg -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#ecg">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#gender -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#gender">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#heartRate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#heartRate">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isPregnant -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isPregnant">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Woman"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#obese -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#obese">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#pulse -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#pulse">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#smoker -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#smoker">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#surname -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#surname">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#systolic -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#systolic">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Arithmya -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Arithmya">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas"/>
+        <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#CardiacComplications"/>
+        <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#CerebralComplications"/>
+        <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Hypertension"/>
+        <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Hypotension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Bradycardia -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Bradycardia">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#pulse"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">70</xsd:maxInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Arithmya"/>
+        <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Tachycardia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#CardiacComplications -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#CardiacComplications">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas"/>
+        <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#CerebralComplications"/>
+        <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Hypertension"/>
+        <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Hypotension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#CerebralComplications -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#CerebralComplications">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas"/>
+        <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Hypertension"/>
+        <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Hypotension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas"/>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Hypertension -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Hypertension">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas"/>
+        <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Hypotension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HypertensionStage1 -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HypertensionStage1">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#systolic"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">130</xsd:minExclusive>
+                            </rdf:Description>
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">140</xsd:maxInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Hypertension"/>
+        <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HypertensionStage2"/>
+        <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Pre-hypertension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HypertensionStage2 -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HypertensionStage2">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#systolic"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">140</xsd:minExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Hypertension"/>
+        <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Pre-hypertension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Hypotension -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Hypotension">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#systolic"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">120</xsd:maxExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Man -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Man">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <owl:disjointWith rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Woman"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasSymptoms"/>
+                <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Symptoms"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#diabetic"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#People">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#address"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#surname"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#name"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#age"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#smoker"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Pre-hypertension -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Pre-hypertension">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#systolic"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">120</xsd:minExclusive>
+                            </rdf:Description>
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">130</xsd:maxInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Hypertension"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Pregnant -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Pregnant">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Woman"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isPregnant"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Symptoms -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Symptoms"/>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Tachycardia -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Tachycardia">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#pulse"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">70</xsd:minExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Arithmya"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Woman -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Woman">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#isPregnant"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP100_60 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP100_60">
+        <distolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">60</distolic>
+        <systolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</systolic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP100_70 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP100_70">
+        <distolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">70</distolic>
+        <systolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">110</systolic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP110_70 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP110_70">
+        <distolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">70</distolic>
+        <systolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">110</systolic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP120_80 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP120_80">
+        <distolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">80</distolic>
+        <systolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">120</systolic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP125_90 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP125_90">
+        <distolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">90</distolic>
+        <systolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">125</systolic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP130_90 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP130_90">
+        <distolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">90</distolic>
+        <systolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">130</systolic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP135_90 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP135_90">
+        <distolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">90</distolic>
+        <systolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">135</systolic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP140_100 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP140_100">
+        <distolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</distolic>
+        <systolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">140</systolic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP165_120 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP165_120">
+        <distolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">120</distolic>
+        <systolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">165</systolic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP170_135 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP170_135">
+        <distolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">135</distolic>
+        <systolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">170</systolic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP175_120 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP175_120">
+        <distolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">120</distolic>
+        <systolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">175</systolic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP80_50 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP80_50">
+        <distolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">50</distolic>
+        <systolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">80</systolic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP95_70 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP95_70">
+        <distolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">70</distolic>
+        <systolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">90</systolic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP95_75 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#BP95_75">
+        <distolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">75</distolic>
+        <systolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">95</systolic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_1">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas"/>
+        <isDefinedBy rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_2">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas"/>
+        <isDefinedBy rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_3">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas"/>
+        <isDefinedBy rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor_3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_4">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas"/>
+        <isDefinedBy rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor_4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_5">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas"/>
+        <isDefinedBy rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Dizzines -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Dizzines">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Symptoms"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_1"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_10"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_11"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_12"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_13"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_20"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_4"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_7"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Marramendje
+    &lt;/p&gt;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor_1">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prishtina</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">35</age>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sami</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uka</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor_2">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Female"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gjilan</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">41</age>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Florina</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gashi</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor_3">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Female"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mitrovica</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">34</age>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mimoza</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sallauka</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor_4">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Female"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prizreni</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">31</age>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zanfina</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mikushnica</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor_5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor_5">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prishtina</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">51</age>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dardan</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sylejmani</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Fatigue -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Fatigue">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Symptoms"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_1"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_17"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_19"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_7"/>
+        <rdfs:comment xml:lang="al">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Lodhje
+    &lt;/p&gt;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Female -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Female"/>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#H100 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#H100">
+        <pulse rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</pulse>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HR110 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HR110">
+        <pulse rdf:datatype="http://www.w3.org/2001/XMLSchema#int">110</pulse>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HR120 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HR120">
+        <pulse rdf:datatype="http://www.w3.org/2001/XMLSchema#int">120</pulse>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HR50 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HR50">
+        <pulse rdf:datatype="http://www.w3.org/2001/XMLSchema#int">50</pulse>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HR60 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HR60">
+        <pulse rdf:datatype="http://www.w3.org/2001/XMLSchema#int">60</pulse>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HR70 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HR70">
+        <pulse rdf:datatype="http://www.w3.org/2001/XMLSchema#int">70</pulse>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HR90 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HR90">
+        <pulse rdf:datatype="http://www.w3.org/2001/XMLSchema#int">90</pulse>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Headache -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Headache">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Symptoms"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_1"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_10"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_12"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_14"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_2"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_20"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_4"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_5"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_6"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_7"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Kokedhembje
+    &lt;/p&gt;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HeartFailure -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HeartFailure">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Symptoms"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_11"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_16"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_7"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Crregullim i zemres
+    &lt;/p&gt;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Nausea -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Nausea">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Symptoms"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_10"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_19"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Mundim, te peshtjellura...
+    &lt;/p&gt;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Nosebleed -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Nosebleed">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Symptoms"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_12"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_18"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_20"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_9"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Gjakderdhje nga hundet...
+    &lt;/p&gt;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_0d58a72e_17a1_444d_ab2a_a86fbbc3a641 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_0d58a72e_17a1_444d_ab2a_a86fbbc3a641">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Female"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peja</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">47</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</diabetic>
+        <isPregnant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isPregnant>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <rdfs:label xml:lang="en">Patient_21</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_1">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Dizzines"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Fatigue"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Headache"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_1"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prishtina</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">55</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sali</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uka</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_10">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Female"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Dizzines"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Headache"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Nausea"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#VisualDisturbances"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_5"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Keqekoll</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">69</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hava</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quka</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_11 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_11">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Dizzines"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HeartFailure"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Tinnitus"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Vertigo"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#VisualDisturbances"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_4"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gjakova</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">80</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shaban</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fazliu</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_12 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_12">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Female"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Dizzines"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Headache"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Nosebleed"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_1"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obiliq</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">16</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Drenusha</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gashi</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_13 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_13">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Dizzines"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Vertigo"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#VisualDisturbances"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_2"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shkup</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">59</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Musa</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Krasniqi</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_14 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_14">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Headache"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_1"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Llapushnik</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">21</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Drin</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fejza</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_15 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_15">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Female"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#VisualDisturbances"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mitrovica</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">34</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maki</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kelani</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_16 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_16">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HeartFailure"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Vertigo"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_4"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Klina</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">73</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sadri</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Muzaka</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_17 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_17">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Female"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Fatigue"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_1"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vushtrri</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">37</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Drita</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Berisha</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_18 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_18">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Nosebleed"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Tinnitus"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Vertigo"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#VisualDisturbances"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_3"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peja</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">50</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sazan</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rugova</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_19 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_19">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Female"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Fatigue"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Nausea"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gjilan</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">33</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Malsore</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Halili</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_2">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Female"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Headache"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_2"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gjilan</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">41</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Minire</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sala</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_20 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_20">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Dizzines"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Headache"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Nosebleed"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Tinnitus"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_2"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kaminca</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">45</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dardan</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sejdiu</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_21 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_21">
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_21"/>
+        <owl:annotatedProperty rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#hasGender"/>
+        <owl:annotatedTarget rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+        <owl:backwardCompatibleWith>Male</owl:backwardCompatibleWith>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_22 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_22">
+        <distolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">70</distolic>
+        <systolic rdf:datatype="http://www.w3.org/2001/XMLSchema#int">130</systolic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_23 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_23">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_27b77b19_c4a2_4869_8f1c_c36778a93945 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_27b77b19_c4a2_4869_8f1c_c36778a93945">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <rdfs:label xml:lang="en">Patient_22</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_3">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Female"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Vertigo"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mitrovice</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">42</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kaltrina</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Berisha</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_339a4561_8bf4_4184_8296_acb7c2ee74ae -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_339a4561_8bf4_4184_8296_acb7c2ee74ae">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <rdfs:label xml:lang="en">Patient_24</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_4">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Dizzines"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Headache"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#VisualDisturbances"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_4"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prishtina</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">51</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Besim</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Halili</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_5">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Headache"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_5"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peja</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">35</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Agron</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Muharremi</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_6">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Headache"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_1"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vushtrri</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">27</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ekrem</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Salihu</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_7">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Dizzines"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Fatigue"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Headache"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#HeartFailure"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#VisualDisturbances"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_5"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prishtine</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">70</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Muharrem</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bahtiri</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_8 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_8">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Male"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Vertigo"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_1"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mitrovica</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">17</age>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pleurat</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sejdiu</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_9 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_9">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient"/>
+        <hasGender rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Female"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Nosebleed"/>
+        <hasSymptoms rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#VisualDisturbances"/>
+        <isSickOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Diseas_2"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peja</address>
+        <diabetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</diabetic>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Flutura</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maloku</surname>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_de1a058e_9c3c_4cc5_a44c_079f2c9601d1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_de1a058e_9c3c_4cc5_a44c_079f2c9601d1">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Doctor"/>
+        <address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prishtina</address>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#int">70</age>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Faik</name>
+        <smoker rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</smoker>
+        <surname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hima</surname>
+        <rdfs:label xml:lang="en">Doctor_6</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Tinnitus -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Tinnitus">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Symptoms"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_11"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_18"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_20"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Tingellima ne vesh...
+    &lt;/p&gt;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Vertigo -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Vertigo">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Symptoms"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_11"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_13"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_16"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_18"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_3"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_8"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Marramendje HyP
+    &lt;/p&gt;</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/ProjektiWebSemantic.owl#VisualDisturbances -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#VisualDisturbances">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Symptoms"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_10"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_11"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_13"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_15"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_18"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_4"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_7"/>
+        <isSymptomOf rdf:resource="http://www.owl-ontologies.com/ProjektiWebSemantic.owl#Patient_9"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;p style=&quot;margin-top: 0&quot;&gt;
+      Crregullim  ne te par&amp;#235;...
+    &lt;/p&gt;</rdfs:comment>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
